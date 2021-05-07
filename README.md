@@ -98,6 +98,14 @@ Desde terminal se podrá ver los resultados de los metodos ejecutados por el cli
 |:--:|
 |**Figure 1**: Resultado de la ejecución del cliente.|
 
+|![](images/img2.jpeg)|
+|:--:|
+|**Figure 2**: Resultado de la ejecución del cliente.|
+
+|![](images/img3.jpeg)|
+|:--:|
+|**Figure 3**: Resultado de la ejecución del cliente.|
+
 Si desea realuzar más pruebas con el cliente, en el código en el método **run()** se ejecuta los métodos  
 
 El puede ejecutar 5 métodos, los cuales son:
