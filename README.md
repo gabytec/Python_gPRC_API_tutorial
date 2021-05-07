@@ -10,13 +10,13 @@ El código implemento un gRPC en Python.
 
 ### Métodos
 
-En un gRPC los métodos se manejas por medio de servicios, estos son declaros en un achivo con extensión .proto (búfer de protocolo).
+En un gRPC los métodos se maneja por medio de servicios, estos son declaros en un achivo con extensión .proto (búfer de protocolo).
 
-Cada servicio tiene un nombre un método, un parámetro y un retorno. 
+Cada servicio tiene un nombre, un método, un parámetro y un retorno. 
 
 Los búfer de protocolo definen la estructura de los datos que se desea en un archivo proto, estos se organizan por medio de mensajes y cada mensaje es un pequeño registro lógico de la información.
 
-La estructura de estos mensajes por medio de un par de serie valor llamados campos.
+La estructura de estos mensajes son por medio de un par de llave, valor, llamados campos.
 
 Ejemplo mensajes:
 ```proto
@@ -28,14 +28,14 @@ message Book{
 ```
 
 En gRPC se pueden hacer varias tipos de implementaciones:
-* **RPC unutarios** funciona como una llamada de función normal, Envia una única solicitud como una llamada de función y obtiene una única respuesta del servidor.
+* **RPC unutarios** funciona como una llamada de función normal. Se envia una única solicitud como una llamada de función y se obtiene una única respuesta del servidor.
 
 Ejemplo
 ```proto
 rpc getBook(RequestMessage) return (ResponseMessage)
 ```
 
-* **RCP de transmisión por secuencuencia del servidor** El cliente envia un mensaje declarado en el archivo .proto al servidor y obtiene una secuencia de mensajes para leer.
+* **RCP de transmisión por secuencuencia del servidor** El cliente envia un mensaje declarado en el archivo .proto, al servidor y obtiene una secuencia de mensajes para leer.
 
 Ejemplo
 ```proto
@@ -48,7 +48,7 @@ Ejemplo
 rpc getBook(stream RequestMessage) return (ResponseMessage)
 ```
 
-* **RCP de transmisión bidireccional** El servidor puede leer todos los mensajes de respues devolver o puede leer y responder al mismo tiempo. Las lecturas y las escrituras operan de forma independiente.
+* **RCP de transmisión bidireccional** El servidor puede leer todos los mensajes y después retornar una respuesta o puede leer y responder al mismo tiempo. Las lecturas y las escrituras operan de forma independiente.
 
 Ejemplo
 ```proto
@@ -57,12 +57,12 @@ rpc getBook(stream RequestMessage) return (stream ResponseMessage)
 
 ### Ejecución del ejemplo
 
-Descargar el código desde el repositorio:}
+Descargar el código desde el repositorio:
 
 ```sh
 $ git clone https://github.com/gabytec/Python_gPRC_API_tutorial.git
 ```
-El comando anterior crear un direccotio llamado Python_gRPC_API_tutorial. Entonces accedemos al directorio con el comando:
+El comando anterior crear un direcctorio llamado Python_gRPC_API_tutorial. Entonces accedemos al directorio con el comando:
 
 ```sh
 $ cd Python_gRPC_API_tutorial
@@ -92,7 +92,7 @@ Ahora ejecutamos en el cliente
 $ python3 unary_client.py
 ```
 
-Desde terminal se podrá ver los resultados de los metodos ejecutados por el cliente
+Desde terminal se podrá ver los resultados de los metodos ejecutados por el cliente.
 
 |![](images/img1.jpeg)|
 |:--:|
@@ -106,16 +106,16 @@ Desde terminal se podrá ver los resultados de los metodos ejecutados por el cli
 |:--:|
 |**Figure 3**: Resultado de la ejecución del cliente.|
 
-Si desea realuzar más pruebas con el cliente, en el código en el método **run()** se ejecuta los métodos  
+Si queremos realizar más pruebas con el cliente, en el código del cliente existe el método **run()** que ejecuta los métodos.
 
-El puede ejecutar 5 métodos, los cuales son:
-* **def get_book(stub, value)** Este método recibe un value, el cual, es el id de un libro y muestra la información almacena del mismo.  
+En el puede ejecutar 5 métodos, los cuales son:
+* **def get_book(stub, value)** Este método recibe un value, el cuál, es el id de un libro y muestra la información almacena del mismo.  
 
 * **def get_books(stub)** Este método obtiene la información de todos lo libros almacenados.
 
-* **def delete_book(stub, value)** Este método recibe como parámetro un valor, el cual, es el id del libro que se desea eliminar y muestra un mensaje de confirmación por parte del server.
+* **def delete_book(stub, value)** Este método recibe como parámetro un valor, el cuál, es el id del libro que se desea eliminar y muestra un mensaje de confirmación por parte del server.
 
-* **def put_book(stub, id, key, value)** Este método, recibe el id del libro, el valor que se desea cambiar ("title", "author", "first_sentence",     "year_published") y el valor a cual se desea cambiar y muestra un mensaje de confirmación por parte del server
+* **def put_book(stub, id, key, value)** Este método, recibe el id del libro, el valor que se desea cambiar ("title", "author", "first_sentence", "year_published") y el valor a cuál se desea cambiar y muestra un mensaje de confirmación por parte del server
 
 * **def post_book(stub, idB, title, author, first_sentence, year_published)** Este método agrega un nuevo libro.
 
