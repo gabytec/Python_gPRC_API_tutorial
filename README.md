@@ -109,9 +109,9 @@ Desde terminal se podrá ver los resultados de los metodos ejecutados por el cli
 Si queremos realizar más pruebas con el cliente, en el código del cliente existe el método **run()** que ejecuta los métodos.
 
 En el puede ejecutar 5 métodos, los cuales son:
-* **def get_book(stub, value)** Este método recibe un value, el cuál, es el id de un libro y muestra la información almacena del mismo.  
+* **def get_book(stub, value)** Este método recibe un value, el cuál, es el id de un libro y muestra la información almacenada del mismo.  
 
-* **def get_books(stub)** Este método obtiene la información de todos lo libros almacenados.
+* **def get_books(stub)** Este método obtiene la información de todos los libros almacenados.
 
 * **def delete_book(stub, value)** Este método recibe como parámetro un valor, el cuál, es el id del libro que se desea eliminar y muestra un mensaje de confirmación por parte del server.
 
