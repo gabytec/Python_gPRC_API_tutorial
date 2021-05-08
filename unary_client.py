@@ -47,7 +47,6 @@ def post_book(stub, idB, title, author, first_sentence, year_published):
 def run():
     with grpc.insecure_channel('localhost:50051') as channel:
         stub = pb2_grpc.UnaryStub(channel)
-        get_message(stub)
         print("-------------- GetBook --------------")
         get_book(stub, "1")
         print("-------------- GetBooks --------------")
